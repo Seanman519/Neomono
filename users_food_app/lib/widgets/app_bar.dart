@@ -7,6 +7,7 @@ import 'package:users_food_app/screens/cart_screen.dart';
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
   final String? sellerUID;
+  // ignore: prefer_const_constructors_in_immutables
   MyAppBar({Key? key, this.bottom, this.sellerUID}) : super(key: key);
 
   @override

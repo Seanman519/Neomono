@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:users_food_app/assistantMethods/assistant_methods.dart';
-import 'package:users_food_app/widgets/items_avatar_carousel.dart';
+// import 'package:users_food_app/widgets/items_avatar_carousel.dart';
 import 'package:users_food_app/widgets/my_drawer.dart';
 import 'package:users_food_app/widgets/progress_bar.dart';
 
 import '../authentication/login.dart';
 import '../models/sellers.dart';
-import '../widgets/seller_avatar_carousel.dart';
+// import '../widgets/seller_avatar_carousel.dart';
 import '../widgets/design/sellers_design.dart';
 import '../widgets/user_info.dart';
 
@@ -123,8 +123,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SellerCarouselWidget(),
-                      ItemsAvatarCarousel(),
+                      // SellerCarouselWidget(),
+                      // ItemsAvatarCarousel()
                     ],
                   ),
                 ),

@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   List<Placemark>? placeMarks;
 
 //address name variable
-  String completeAddress = "";
+  String completeAddress = "2nd street Thulani";
 
 //seller image url
   String sellerImageUrl = "";

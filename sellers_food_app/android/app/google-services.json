@@ -1,36 +1,46 @@
 {
   "project_info": {
-    "project_number": "38185865524",
-    "project_id": "bring-clone-app",
-    "storage_bucket": "bring-clone-app.appspot.com"
+    "project_number": "10509295521",
+    "firebase_url": "https://neomono-test-default-rtdb.firebaseio.com",
+    "project_id": "neomono-test",
+    "storage_bucket": "neomono-test.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:38185865524:android:6d6aa9fcbf471f26081561",
+        "mobilesdk_app_id": "1:10509295521:android:ba93390f707c177301b5e0",
         "android_client_info": {
           "package_name": "com.adnanturgay.sellersapp"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "38185865524-la2ce851g9e383kl2nmq0smhtap9p333.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDUZuKYClVTabVTlg1hWpKcEXOvgAla5YM"
+          "current_key": "AIzaSyCwRPl3mvkXY6uunqi3kee_ErvInC2Oe2U"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "38185865524-la2ce851g9e383kl2nmq0smhtap9p333.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10509295521:android:ff2713c091362c7501b5e0",
+        "android_client_info": {
+          "package_name": "com.adnanturgay.usersapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwRPl3mvkXY6uunqi3kee_ErvInC2Oe2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }
