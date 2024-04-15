@@ -450,63 +450,68 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
   }
 
 //saving menu information to firebase
-  saveInfo(String downloadUrl) {
-    final ref = FirebaseFirestore.instance
-        //under sellers collection
-        .collection("sellers")
-        //for every unique seller
-        .doc(sharedPreferences!.getString("uid"))
-        //menus
-        .collection("menus")
-        //sub collection for items
-        .doc(widget.model!.menuID)
-        .collection("items");
+  saveInfo(String downloadUrl) async {
+  try {
+    // Generate unique document ID
+    String itemID = DateTime.now().millisecondsSinceEpoch.toString();
 
-//information pass to firebase
-    ref.doc(uniqueIdName).set(
-      {
-        "itemID": uniqueIdName,
-        "menuID": widget.model!.menuID,
-        "sellerUID": sharedPreferences!.getString("uid"),
-        "sellerName": sharedPreferences!.getString("name"),
-        "shortInfo": shortInfoController.text.toString(),
-        "longDescription": descriptionController.text.toString(),
-        "price": int.parse(priceController.text),
-        "title": titleController.text.toString(),
-        "publishedDate": DateTime.now(),
-        "status": "available",
-        "thumbnailUrl": downloadUrl,
-      },
-    ).then((value) {
-      final itemsref = FirebaseFirestore.instance.collection("items");
-      itemsref.doc(uniqueIdName).set(
-        {
-          "itemID": uniqueIdName,
-          "menuID": widget.model!.menuID,
-          "sellerUID": sharedPreferences!.getString("uid"),
-          "sellerName": sharedPreferences!.getString("name"),
-          "shortInfo": shortInfoController.text.toString(),
-          "longDescription": descriptionController.text.toString(),
-          "price": int.parse(priceController.text),
-          "title": titleController.text.toString(),
-          "publishedDate": DateTime.now(),
-          "status": "available",
-          "thumbnailUrl": downloadUrl,
-        },
-      );
-    }).then(
-      (value) {
-        clearMenuUploadFrom();
+    // Reference to the Firestore collection
+    final sellersRef = FirebaseFirestore.instance.collection("sellers");
 
-        setState(
-          () {
-            uniqueIdName = DateTime.now().millisecondsSinceEpoch.toString();
-            uploading = false;
-          },
-        );
+    // Document reference for the seller
+    final sellerDocRef = sellersRef.doc(sharedPreferences!.getString("uid"));
+
+    // Write item data to the seller's subcollection
+    await sellerDocRef.collection("menus").doc(widget.model!.menuID)
+        .collection("items").doc(itemID).set({
+      "itemID": itemID,
+      "menuID": widget.model!.menuID,
+      "sellerUID": sharedPreferences!.getString("uid"),
+      "sellerName": sharedPreferences!.getString("name"),
+      "shortInfo": shortInfoController.text,
+      "longDescription": descriptionController.text,
+      "price": int.parse(priceController.text),
+      "title": titleController.text,
+      "publishedDate": DateTime.now(),
+      "status": "available",
+      "thumbnailUrl": downloadUrl,
+    });
+
+    // Document reference for the general "items" collection
+    final itemsRef = FirebaseFirestore.instance.collection("items");
+
+    // Write item data to the general "items" collection
+    await itemsRef.doc(itemID).set({
+      "itemID": itemID,
+      "menuID": widget.model!.menuID,
+      "sellerUID": sharedPreferences!.getString("uid"),
+      "sellerName": sharedPreferences!.getString("name"),
+      "shortInfo": shortInfoController.text,
+      "longDescription": descriptionController.text,
+      "price": int.parse(priceController.text),
+      "title": titleController.text,
+      "publishedDate": DateTime.now(),
+      "status": "available",
+      "thumbnailUrl": downloadUrl,
+    });
+
+    // Clear form and update state
+    clearMenuUploadFrom();
+    setState(() {
+      uploading = false;
+    });
+  } catch (error) {
+    // Handle any errors that occur during Firestore write operation
+    print("Error saving item: $error");
+    showDialog(
+      context: context,
+      builder: (context) {
+        return ErrorDialog(message: "Error saving item. Please try again.");
       },
     );
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
