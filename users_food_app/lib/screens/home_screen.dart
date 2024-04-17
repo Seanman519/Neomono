@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     end: FractionalOffset(4.0, -1.0),
                     colors: [
                       Color(0xFFFFFFFF),
-                      Color(0xFFFAC898),
+                      Color.fromARGB(255, 46, 45, 45),
                     ],
                   ),
                 ),
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(8),
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.amber,
+                        color: Color.fromARGB(255, 41, 41, 40),
                       ),
                       child: const Icon(Icons.exit_to_app),
                     ),
@@ -112,24 +112,24 @@ class _HomeScreenState extends State<HomeScreen> {
               child: UserInformation(),
             ),
 
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: SizedBox(
-                  //taking %20 height for the device
-                  height: MediaQuery.of(context).size.height * .2,
-                  //taking max width for the device
-                  width: MediaQuery.of(context).size.width,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      // SellerCarouselWidget(),
-                      // ItemsAvatarCarousel()
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            // SliverToBoxAdapter(
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(5.0),
+            //     child: SizedBox(
+            //       //taking %20 height for the device
+            //       height: MediaQuery.of(context).size.height * .2,
+            //       //taking max width for the device
+            //       width: MediaQuery.of(context).size.width,
+            //       child: const Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //         children: [
+            //           // SellerCarouselWidget(),
+            //           // ItemsAvatarCarousel()
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ),
             StreamBuilder<QuerySnapshot>(
               stream:
                   FirebaseFirestore.instance.collection("sellers").snapshots(),
