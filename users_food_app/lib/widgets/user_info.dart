@@ -131,18 +131,18 @@ class _UserInformationState extends State<UserInformation> {
                   ),
                 ),
               ),
-              Center(
-                child: Text(
-                  "Meals".toUpperCase(),
-                  style: GoogleFonts.lato(
-                    textStyle: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
+              // Center(
+              //   child: Text(
+              //     "Meals".toUpperCase(),
+              //     style: GoogleFonts.lato(
+              //       textStyle: const TextStyle(
+              //         fontSize: 15,
+              //         fontWeight: FontWeight.bold,
+              //         color: Colors.black,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           )
         ],
