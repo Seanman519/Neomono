@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: const Color(0xFFFAC898),
+      backgroundColor: Color.fromARGB(255, 27, 27, 26),
       body: Stack(
         children: [
           // White Container top half
@@ -85,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
                 end: FractionalOffset(5.0, -1.0),
                 colors: [
                   Color(0xFFFFFFFF),
-                  Color.fromARGB(255, 241, 235, 229),
+                  Color.fromARGB(255, 39, 38, 38),
                 ],
               ),
               borderRadius: BorderRadius.circular(copAnimated ? 40.0 : 0.0),

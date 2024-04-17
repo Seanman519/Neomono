@@ -23,7 +23,7 @@ class _UserInformationState extends State<UserInformation> {
           end: FractionalOffset(5.0, -6.0),
           colors: [
             Color(0xFFFFFFFF),
-            Color(0xFFFAC898),
+            Color.fromARGB(255, 26, 25, 25),
           ],
         ),
       ),
@@ -50,7 +50,8 @@ class _UserInformationState extends State<UserInformation> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.amber.withOpacity(0.4),
+                      color: const Color.fromARGB(255, 20, 20, 20)
+                          .withOpacity(0.4),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     padding: const EdgeInsets.all(5),

@@ -30,7 +30,7 @@ class _MyAppBarState extends State<MyAppBar> {
             end: FractionalOffset(5.0, -1.0),
             colors: [
               Color(0xFFFFFFFF),
-              Color(0xFFFAC898),
+              Color.fromARGB(255, 24, 23, 23),
             ],
           ),
         ),

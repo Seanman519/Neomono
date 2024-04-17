@@ -208,7 +208,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                             ),
                           ),
                           Text(
-                            "\$" + widget.model!.price.toString(),
+                            "\R" + widget.model!.price.toString(),
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
                                 fontSize: 30,
