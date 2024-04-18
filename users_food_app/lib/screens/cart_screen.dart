@@ -49,7 +49,7 @@ class _CartScreenState extends State<CartScreen> {
               end: FractionalOffset(5.0, -1.0),
               colors: [
                 Color(0xFFFFFFFF),
-                Color(0xFFFAC898),
+                Color.fromARGB(255, 24, 23, 23),
               ],
             ),
           ),
@@ -61,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.shopping_cart,
-                  color: Colors.orange,
+                  color: Colors.grey,
                 ),
               ),
               Positioned(
@@ -118,7 +118,7 @@ class _CartScreenState extends State<CartScreen> {
                 "Clear Cart",
                 style: TextStyle(fontSize: 16),
               ),
-              backgroundColor: Colors.amber,
+              backgroundColor: Colors.grey,
               icon: const Icon(Icons.clear_all),
               onPressed: () {
                 clearCartNow(context);
@@ -138,7 +138,7 @@ class _CartScreenState extends State<CartScreen> {
                 "Check Out",
                 style: TextStyle(fontSize: 16),
               ),
-              backgroundColor: Colors.amber,
+              backgroundColor: Colors.grey,
               icon: const Icon(Icons.navigate_next),
               onPressed: () {
                 Navigator.push(
@@ -162,7 +162,7 @@ class _CartScreenState extends State<CartScreen> {
             end: FractionalOffset(2.0, -1.0),
             colors: [
               Color(0xFFFFFFFF),
-              Color(0xFFFAC898),
+              Color.fromARGB(255, 20, 20, 20),
             ],
           ),
         ),

@@ -189,7 +189,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             end: FractionalOffset(5.0, -1.0),
             colors: [
               Color(0xFFFFFFFF),
-              Color(0xFFFAC898),
+              Color.fromARGB(255, 24, 23, 23),
             ],
           ),
         ),
@@ -293,11 +293,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       end: Alignment.bottomRight,
                       stops: [0.0, 1.0],
                       colors: [
-                        Colors.amber,
+                        Colors.grey,
                         Colors.black,
                       ],
                     ),
-                    color: Colors.deepPurple.shade300,
+                    color: Colors.grey.shade300,
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: ElevatedButton(
